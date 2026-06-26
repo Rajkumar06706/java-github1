@@ -15,7 +15,7 @@ permissions:
   pull-requests: write
   
 jobs:
-  ci:    
+  ci:
     uses: Rajkumar06706/java-github/.github/workflows/platform-ci.yml@main
     with:
       java-version: "17"
