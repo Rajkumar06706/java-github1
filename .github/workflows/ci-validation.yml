@@ -20,7 +20,7 @@ jobs:
     with:
       java-version: "17"
     secrets:
-      GITOPS_TOKEN: ${{ secrets.GITOPS_TOKEN }}
+      GITOPS_TOKEN: ${{ secrets.GIT_TOKEN }}
       
   agent-check:
     uses: Rajkumar06706/java-github/.github/workflows/post-architect.yml@main
