@@ -1,0 +1,21 @@
+name: PR Validation
+
+on:
+  pull_request:
+    branches:
+      - feature
+
+permissions:
+  actions: read
+  contents: read
+  security-events: write
+  pull-requests: write
+
+jobs:
+  validate:
+    uses: Dhana008/java-platform/.github/workflows/platform-pr.yml@develop
+    with:
+      java-version: "17"
+  #agent-check:
+    #uses: Dhana008/java-platform/.github/workflows/post-architect.yml@develop
+    #secrets: inherit

@@ -1,0 +1,37 @@
+name: Promote
+
+on:
+  workflow_dispatch:
+
+    inputs:
+
+    
+      source-environment:
+        required: true
+        type: choice
+        options:
+          - dev
+          - sit
+          - uat
+    
+      target-environment:
+        required: true
+        type: choice
+        options:
+          - sit
+          - uat
+          - prod
+
+jobs:
+
+  promote:
+
+    uses: Dhana008/java-platform/.github/workflows/platform-promote.yml@develop
+
+    with:
+      application: java-app-demo
+      source-environment: ${{ inputs.source-environment }}
+      target-environment: ${{ inputs.target-environment }}
+
+    secrets:
+      GITOPS_TOKEN: ${{ secrets.GITOPS_TOKEN }}

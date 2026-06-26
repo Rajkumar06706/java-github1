@@ -1,0 +1,30 @@
+name: Rollback Application
+
+on:
+  workflow_dispatch:
+    inputs:
+      rollback_mode:
+        description: "Rollback Mode"
+        required: true
+        default: previous
+        type: choice
+        options:
+          - previous
+          - manual
+
+      image_tag:
+        description: "Image tag (only for manual rollback)"
+        required: false
+
+jobs:
+  rollback:
+    uses: Dhana008/java-platform/.github/workflows/rollback.yml@develop
+
+    with:
+      gitops_repo: Dhana008/gitops-environments
+      deployment_file: applications/java-app-demo/dev/deployment.yaml
+      rollback_mode: ${{ github.event.inputs.rollback_mode }}
+      image_tag: ${{ github.event.inputs.image_tag }}
+
+    secrets:
+      GITOPS_TOKEN: ${{ secrets.GITOPS_TOKEN }}
