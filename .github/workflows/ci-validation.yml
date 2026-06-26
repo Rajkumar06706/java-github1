@@ -16,7 +16,7 @@ permissions:
   
 jobs:
   ci:
-    uses: Rajkumar06706/java-github/blob/main/.github/workflows/platform-ci.yml@main
+    uses: Rajkumar06706/java-github/.github/workflows/platform-ci.yml@main
     with:
       java-version: "17"
     secrets:
