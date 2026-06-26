@@ -3,7 +3,7 @@ name: CI Validation
 on:
   pull_request:
     branches:
-      - dev
+      - main
 
 permissions:
   id-token: write
@@ -15,12 +15,12 @@ permissions:
   
 jobs:
   ci:    
-    uses: Dhana008/java-platform/.github/workflows/platform-ci.yml@develop
+    uses: Rajkumar06706/java-github/.github/workflows/platform-ci.yml@develop
     with:
       java-version: "17"
     secrets:
       GITOPS_TOKEN: ${{ secrets.GITOPS_TOKEN }}
       
   agent-check:
-    uses: Dhana008/java-platform/.github/workflows/post-architect.yml@develop
+    uses: Rajkumar06706/java-github/.github/workflows/post-architect.yml@develop
     secrets: inherit
