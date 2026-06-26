@@ -17,12 +17,12 @@ permissions:
   
 jobs:
   ci:    
-    uses: Rajkumar06706/java-github/.github/workflows/platform-ci.yml@develop
+    uses: Rajkumar06706/java-github/.github/workflows/platform-ci.yml@main
     with:
       java-version: "17"
     secrets:
       GITOPS_TOKEN: ${{ secrets.GITOPS_TOKEN }}
       
   agent-check:
-    uses: Rajkumar06706/java-github/.github/workflows/post-architect.yml@develop
+    uses: Rajkumar06706/java-github/.github/workflows/post-architect.yml@main
     secrets: inherit
