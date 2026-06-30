@@ -13,9 +13,9 @@ permissions:
 
 jobs:
   validate:
-    uses: Dhana008/java-platform/.github/workflows/platform-pr.yml@develop
+    uses: Rajkumar06706/java-github/.github/workflows/platform-pr.yml@main
     with:
       java-version: "17"
   #agent-check:
-    #uses: Dhana008/java-platform/.github/workflows/post-architect.yml@develop
+    #uses: Rajkumar06706/java-github/.github/workflows/post-architect.yml@main
     #secrets: inherit
